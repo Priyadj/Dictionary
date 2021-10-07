@@ -14,7 +14,7 @@ const errorText = document.querySelectorAll(".errorText");
 
 
 
-def1.innerHTML = "Defination";
+def1.innerHTML = "Definition";
 eg1.innerHTML = "Example";
 word.innerHTML = "dictionary";
 speech.innerHTML = "noun";
@@ -27,11 +27,12 @@ offensive.innerHTML = "Offensive: false";
 
 search.addEventListener("click", (e) => {
     e.preventDefault();
-    let searchWord = userWord.value;
+    let searchWord = userWord.value.trim();
     if(searchWord == ""){
-        alert("First type any word...");
+        alert("No word provided!");
         location.reload();
     }
+   
     let API_URL = `https://www.dictionaryapi.com/api/v3/references/learners/json/${searchWord}?key=9284d4a3-9817-41b9-969e-f83a87fca44a`;
 
 (async function(){
